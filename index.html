@@ -1,6 +1,111 @@
-<html>
- <body>
-  <h1>Your Name Here</h1>
-  <h2> Your student code here</h2>
- </body>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ข้าวสารราคานักศึกษา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #333;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2em;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 10px;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 15px;
+      width: 280px;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .product-info p {
+      font-size: 1em;
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eeeeee;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ข้าวสารราคานักศึกษา</h1>
+  <p>อิ่มท้อง ประหยัดเงิน เหมาะกับชีวิตเด็กมอเชียงใหม่!</p>
+</header>
+
+<div class="container">
+  <div class="product">
+    <img src="https://i.imgur.com/w1IqOHl.jpg" alt="ข้าวหอมมะลิ">
+    <div class="product-info">
+      <h2>ข้าวหอมมะลิ 100%</h2>
+      <p>ราคา: 35 บาท / กิโล</p>
+      <p>หอม นุ่ม อร่อย เหมือนกินข้าวบ้านแม่</p>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://i.imgur.com/fkXhrD9.jpg" alt="ข้าวกล้องสุขภาพ">
+    <div class="product-info">
+      <h2>ข้าวกล้องสุขภาพ</h2>
+      <p>ราคา: 40 บาท / กิโล</p>
+      <p>อุดมด้วยไฟเบอร์ เหมาะกับสายคลีน!</p>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://i.imgur.com/W6Q4CGT.jpg" alt="ข้าวเหนียว">
+    <div class="product-info">
+      <h2>ข้าวเหนียวเชียงใหม่</h2>
+      <p>ราคา: 30 บาท / กิโล</p>
+      <p>เหนียวนุ่ม กินคู่หมูทอดคือที่สุด</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  ติดต่อ: ร้านข้าวอินดี้ | ใต้หอ D | โทร 080-123-4567 | เปิดทุกวัน 9.00 - 20.00 น.
+</footer>
+
+</body>
 </html>
