@@ -2,391 +2,173 @@
 <html lang="th">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>แม่ช้อยน้ำตก - ก๋วยเตี๋ยวเรือ | MaeChoi Boat Noodle</title>
-  <meta name="description" content="ร้านก๋วยเตี๋ยวเรือ แม่ช้อยน้ำตก — สูตรน้ำตกดั้งเดิม ตกแต่งอบอุ่น เหมาะสำหรับนักศึกษาและนักท่องเที่ยว" />
-  <link rel="icon" href="#logo" />
-
-  <!-- Simple modern styles (self-contained) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แม่ช้อยน้ำตก | Maechoi Boat Noodle</title>
+  <meta name="description" content="ร้านก๋วยเตี๋ยวเรือ แม่ช้อยน้ำตก — รสชาติเข้มข้นแบบไทยแท้ ตั้งอยู่ย่านนิมมาน เหมาะสำหรับนักศึกษาและนักท่องเที่ยว" />
   <style>
+    /* Simple, modern responsive CSS */
     :root{
-      --bg:#fbf9f6;
-      --card:#fff;
-      --accent:#c85a2f;
-      --accent-2:#f3a26b;
+      --accent:#b83b2e; /* warm red */
+      --accent-2:#f4b183; /* warm peach */
       --muted:#6b6b6b;
-      --radius:14px;
-      --glass: rgba(255,255,255,0.6);
-      font-family: "Inter", "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --bg:#fff9f6;
+      --card:#ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,#fff 0%, #fbf9f6 100%);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding-bottom:64px;
-    }
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#111}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
 
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1rem;
-      padding:18px 28px;
-      max-width:1100px;
-      margin:18px auto;
-    }
-    /* Logo */
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-    .brand .logo{
-      width:64px;
-      height:64px;
-      border-radius:12px;
-      padding:8px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      box-shadow: 0 6px 18px rgba(200,90,50,0.12);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .brand h1{
-      font-size:1.05rem;
-      margin:0;
-      letter-spacing:0.2px;
-    }
-    .brand p{margin:0;font-size:.85rem;color:var(--muted)}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{display:flex;flex-direction:column;align-items:flex-start}
+    .logo h1{margin:0;font-size:22px;color:var(--accent)}
+    .tag{font-size:13px;color:var(--muted)}
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:14px;
-      margin:0;
-      padding:0;
-    }
-    nav a{
-      text-decoration:none;
-      padding:8px 12px;
-      border-radius:10px;
-      color:var(--accent);
-      font-weight:600;
-    }
-    nav a.cta{
-      background:var(--accent);
-      color:#fff;
-      box-shadow:0 6px 18px rgba(200,90,50,0.12);
-    }
+    nav{margin-left:auto}
+    nav a{margin-left:12px;text-decoration:none;color:var(--muted);font-weight:600}
 
-    /* Hero */
-    .hero{
-      max-width:1100px;
-      margin:6px auto 26px;
-      padding:22px;
-      border-radius:18px;
-      background:linear-gradient(180deg, rgba(248,242,237,0.9), rgba(255,255,255,0.75));
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap:18px;
-      align-items:center;
-    }
-    .hero .intro h2{margin:0 0 8px;font-size:1.6rem}
-    .hero .intro p{margin:0;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:18px;align-items:center}
+    .hero-card{background:var(--card);padding:22px;border-radius:16px;box-shadow:0 6px 18px rgba(15,15,15,0.06)}
+    .hero h2{margin:0 0 8px 0;font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
 
-    .contact-card{
-      background:var(--card);
-      border-radius:12px;
-      padding:12px;
-      box-shadow: 0 8px 24px rgba(34,34,34,0.06);
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:flex-start;
-    }
-    .contact-card small{color:var(--muted)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff8f6;border:1px solid rgba(200,90,50,0.08);font-weight:600;color:var(--accent)}
+    .menu{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 12px rgba(15,15,15,0.05)}
+    .card h3{margin:0 0 10px 0;color:var(--accent)}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    td,th{padding:8px 6px;border-bottom:1px dashed #eee}
+    .price{font-weight:700;text-align:right}
 
-    /* Menu grid */
-    .section{
-      max-width:1100px;
-      margin:18px auto;
-      padding:0 18px;
-    }
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-    }
-    .menu-card{
-      background:var(--card);
-      border-radius:14px;
-      padding:14px;
-      box-shadow: 0 10px 24px rgba(32,32,32,0.05);
-      display:flex;
-      gap:12px;
-      align-items:center;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .menu-card:hover{ transform:translateY(-6px); box-shadow: 0 20px 40px rgba(32,32,32,0.09); }
-    .dish-thumb{
-      width:92px;
-      height:72px;
-      border-radius:10px;
-      flex-shrink:0;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, #fff, #fff6f4);
-      border:1px solid rgba(0,0,0,0.03);
-    }
-    .dish-info h3{margin:0;font-size:1.02rem}
-    .dish-info p{margin:6px 0 0;color:var(--muted);font-size:.9rem}
-    .price{margin-left:auto;font-weight:700;color:var(--accent)}
+    .drinks ul{list-style:none;padding:0;margin:0}
+    .drinks li{padding:6px 0}
 
-    /* Promo strip */
-    .promo{
-      max-width:1100px;
-      margin:22px auto;
-      padding:14px 18px;
-      border-radius:12px;
-      background:linear-gradient(90deg, rgba(248,242,237,0.9), rgba(255,249,244,0.95));
-      display:flex;
-      gap:16px;
-      align-items:center;
-      justify-content:space-between;
-      border:1px solid rgba(200,90,50,0.06);
-    }
+    .promos{display:flex;gap:12px;margin-top:16px}
+    .promo{flex:1;padding:14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff}
 
-    footer{
-      max-width:1100px;
-      margin:28px auto 80px;
-      padding:18px;
-      border-radius:12px;
-      color:var(--muted);
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
-    }
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:#fff;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .contact{flex:1}
+    .hours{min-width:220px}
 
-    /* Responsive */
-    @media (max-width:880px){
+    .badges{display:flex;gap:10px;margin-top:8px}
+    .badge{background:#f3f3f3;padding:6px 8px;border-radius:8px;font-size:13px}
+
+    /* responsive */
+    @media (max-width:920px){
       .hero{grid-template-columns:1fr}
-      header{padding:12px}
-      .brand h1{font-size:1rem}
+      .menu{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="brand" aria-label="แม่ช้อยน้ำตก โลโก้และชื่อร้าน">
-      <div class="logo" aria-hidden="true">
-        <!-- Inline SVG logo (สามารถแทนด้วยไฟล์ logo.svg ได้) -->
-        <svg width="44" height="44" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
-          <title id="logoTitle">โลโก้ แม่ช้อยน้ำตก</title>
-          <rect x="0" y="0" width="64" height="64" rx="12" fill="#fff" opacity="0.06"/>
-          <path d="M32 10c6.627 0 12 5.373 12 12 0 9.333-12 20-12 20s-12-10.667-12-20c0-6.627 5.373-12 12-12z" fill="#fff"/>
-          <path d="M32 14c4.418 0 8 3.582 8 8 0 6-8 14-8 14s-8-8-8-14c0-4.418 3.582-8 8-8z" fill="#c85a2f"/>
-        </svg>
-      </div>
-      <div>
+  <div class="container">
+    <header>
+      <div class="logo">
         <h1>แม่ช้อยน้ำตก</h1>
-        <p>ก๋วยเตี๋ยวเรือสูตรดั้งเดิม · นิมมานเหมินทร์</p>
+        <div class="tag">Maechoi Boat Noodle — รสชาติเข้มข้นแบบไทย</div>
       </div>
-    </div>
+      <nav>
+        <a href="#menu">เมนู</a>
+        <a href="#promotions">โปรโมชั่น</a>
+        <a href="#contact">ติดต่อ</a>
+      </nav>
+    </header>
 
-    <nav aria-label="เมนูนำทาง">
-      <ul>
-        <li><a href="#menu">เมนู</a></li>
-        <li><a href="#about">เกี่ยวกับ</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
-        <li><a class="cta" href="#order">สั่งเลย</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+      <div class="hero-card">
+        <h2>ยินดีต้อนรับสู่ แม่ช้อยน้ำตก</h2>
+        <p>ร้านก๋วยเตี๋ยวเรือแบบดั้งเดิม ผสานความเข้มข้นของน้ำซุปสูตรพิเศษที่สืบทอดมาจากรุ่นสู่รุ่น — เหมาะสำหรับนักศึกษา, คนทำงาน และนักท่องเที่ยว</p>
 
-  <!-- Hero -->
-  <section class="hero" role="region" aria-labelledby="heroTitle">
-    <div class="intro">
-      <h2 id="heroTitle">รสชาติเข้มข้นแบบต้นตำรับ — น้ำตก 12 สมุนไพร</h2>
-      <p>ร้านก๋วยเตี๋ยวเรือ “แม่ช้อยน้ำตก” ผสมผสานสูตรดั้งเดิมกับบริการทันสมัย เหมาะสำหรับนักศึกษา นักทำงาน และนักท่องเที่ยวที่อยากสัมผัสบรรยากาศไทย ๆ ในย่านนิมมาน</p>
+        <div style="margin-top:14px" class="badges">
+          <div class="badge">น้ำซุปสูตรเด็ด 3 แบบ</div>
+          <div class="badge">สดใหม่ทุกวัน</div>
+          <div class="badge">บริการ QR/Delivery</div>
+        </div>
 
-      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-        <span class="badge">น้ำตก (Signature)</span>
-        <span class="badge">เปิด 10:00 - 21:00 (หยุด พุธ)</span>
-        <span class="badge">รองรับ QR & Cashless</span>
+        <div style="margin-top:16px">
+          <strong>ที่ตั้ง:</strong> ซอยนิมมานเหมินทร์ 11, อ.เมือง, เชียงใหม่<br>
+          <strong>เวลา:</strong> 10:00 - 21:00 (หยุดทุกวันพุธ)
+        </div>
+
       </div>
-    </div>
 
-    <aside>
-      <div class="contact-card" id="contact" aria-label="ข้อมูลและช่องทางการติดต่อ">
-        <strong>ติดต่อร้าน</strong>
-        <small>ที่ตั้ง: ซอยนิมมานเหมินทร์ 11, ต.สุเทพ, อ.เมือง จ.เชียงใหม่</small>
-        <small>เวลา: 10:00 – 21:00 (หยุด พุธ)</small>
-        <small>โทร: <a href="tel:0812345678">081-234-5678</a></small>
-        <small>LINE: @maechoinoodle · IG / Facebook: @maechoinoodle</small>
+      <aside class="card">
+        <h3>ติดต่อ / โซเชียล</h3>
+        <p>โทร: 081-234-5678<br>
+        LINE / IG / Facebook: <strong>@maechoinoodle</strong></p>
 
-        <!-- small QR-like SVG placeholder -->
-        <div style="margin-top:8px;display:flex;gap:8px;align-items:center;">
-          <svg width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="1" y="1" width="6" height="6" rx="1" fill="#eee" stroke="#ddd"></rect>
-            <rect x="17" y="1" width="6" height="6" rx="1" fill="#eee" stroke="#ddd"></rect>
-            <rect x="1" y="17" width="6" height="6" rx="1" fill="#eee" stroke="#ddd"></rect>
-            <rect x="10" y="10" width="4" height="4" fill="#c85a2f"></rect>
-          </svg>
-          <small style="color:var(--muted)">สแกนเพื่อสั่งผ่าน QR code (แทนที่ด้วย QR จริงใน repo)</small>
-        </div>
+        <h3 style="margin-top:12px">บริการ</h3>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>สั่งผ่าน QR Code บนโต๊ะ</li>
+          <li>ชำระแบบ Cashless (PromptPay / TrueMoney / บัตร)</li>
+          <li>ส่งผ่าน GrabFood / LINEMAN / Robinhood</li>
+        </ul>
+
+      </aside>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="card">
+        <h3>เมนูหลัก</h3>
+        <p style="color:var(--muted)">น้ำซุป: สูตรน้ำตก (Signature) | น้ำใส (Original) | ต้มยำโบราณ</p>
+        <table>
+          <thead>
+            <tr><th>เมนู</th><th class="price">ราคา (บาท)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>จานเล็ก (เรือเล็ก)</td><td class="price">25</td></tr>
+            <tr><td>จานกลาง (มาตรฐาน)</td><td class="price">40</td></tr>
+            <tr><td>จานใหญ่ (พิเศษ)</td><td class="price">55</td></tr>
+            <tr><td>เกาเหลาพิเศษ (ไม่มีเส้น)</td><td class="price">60</td></tr>
+            <tr><td>จัมโบ้พรีเมียม (เฉพาะ ศุกร์–อาทิตย์)</td><td class="price">95</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:12px;color:var(--muted)"><strong>เส้น:</strong> เส้นเล็ก / เส้นใหญ่ / หมี่เหลือง / วุ้นเส้น / บะหมี่แห้ง</p>
+        <p style="color:var(--muted)"><strong>เนื้อสัตว์:</strong> หมู / หมูตุ๋น / เนื้อวัว / เนื้อตุ๋น / ลูกชิ้นหมู / ลูกชิ้นเอ็น</p>
       </div>
-    </aside>
-  </section>
 
-  <!-- Menu -->
-  <section class="section" id="menu" aria-labelledby="menuTitle">
-    <h2 id="menuTitle" style="margin:0 0 12px">เมนูยอดนิยม</h2>
+      <div class="card drinks">
+        <h3>เครื่องดื่ม</h3>
+        <ul>
+          <li>น้ำเก๊กฮวยเย็น — 20 บาท</li>
+          <li>น้ำมะตูมเย็น — 20 บาท</li>
+          <li>น้ำอัญชันมะนาว — 25 บาท</li>
+          <li>น้ำตะไคร้หอม — 20 บาท</li>
+          <li>น้ำเปล่า / โค้ก — 15 บาท</li>
+        </ul>
 
-    <div class="menu-grid" role="list">
-      <!-- Menu item 1 -->
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <!-- small SVG representing a bowl -->
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="60" cy="52" rx="44" ry="18" fill="#fff" stroke="#f2d8c8"></ellipse>
-            <path d="M20 50c0 0 6-26 40-26s40 26 40 26" fill="#fff4f0" stroke="#f5b391"></path>
-            <path d="M48 28c4-6 18-8 24 0" stroke="#c85a2f" stroke-width="2" fill="none"></path>
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>ก๋วยเตี๋ยวน้ำตก (ธรรมดา)</h3>
-          <p>น้ำซุปสูตรน้ำตก เข้มข้นจากเลือดหมูและสมุนไพร 12 ชนิด</p>
-        </div>
-        <div class="price">40 ฿</div>
-      </article>
+        <h3 style="margin-top:12px">มาตรฐานคุณภาพ</h3>
+        <p style="color:var(--muted);margin:0">น้ำซุปต้มใหม่ทุกวัน, วัตถุดิบสดจากตลาดเชียงใหม่, ผ่านการตรวจสุขาภิบาลอาหารจากเทศบาลฯ</p>
 
-      <!-- Menu item 2 -->
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="10" y="18" width="100" height="42" rx="10" fill="#fff" stroke="#efe1d6"></rect>
-            <circle cx="40" cy="40" r="8" fill="#f8c2a0"></circle>
-            <circle cx="70" cy="40" r="8" fill="#f0a683"></circle>
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>ก๋วยเตี๋ยวต้มยำโบราณ</h3>
-          <p>เปรี้ยว-เค็ม-หวาน-เผ็ด ครบรส แบบโบราณ</p>
-        </div>
-        <div class="price">55 ฿</div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Menu item 3 -->
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="12" width="104" height="48" rx="10" fill="#fff" stroke="#efe1d6"></rect>
-            <path d="M26 28c8-6 28-6 60 0" stroke="#c85a2f" stroke-width="3" fill="none" />
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>เกาเหลาเครื่องแน่น (ไม่มีเส้น)</h3>
-          <p>สำหรับคนชอบเครื่องแน่น เสิร์ฟร้อน ๆ</p>
-        </div>
-        <div class="price">60 ฿</div>
-      </article>
+    <section id="promotions">
+      <h3 style="margin-top:18px">โปรโมชั่นปี 2025</h3>
+      <div class="promos">
+        <div class="promo">ลด 10% สำหรับนักศึกษา มช. และราชภัฏเชียงใหม่</div>
+        <div class="promo">อิ่มคู่ 79 บาท — ทุกวันจันทร์ (ก๋วยเตี๋ยว 2 ชาม + เครื่องดื่ม 2 แก้ว)</div>
+      </div>
+      <p style="color:var(--muted);margin-top:10px">ซื้อครบ 100 บาท รับเครื่องดื่มฟรี 1 แก้ว • สะสมครบ 10 ชาม ฟรี 1 ชาม ผ่าน LINE Official: @maechoinoodle</p>
+    </section>
 
-      <!-- Menu item 4 (premium) -->
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="12" width="104" height="48" rx="10" fill="#fff" stroke="#efe1d6"></rect>
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style="font-size:12px;fill:#c85a2f;font-weight:700">Premium</text>
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>จัมโบ้พรีเมียม (เนื้อโกเบ)</h3>
-          <p>เสิร์ฟเฉพาะวันศุกร์–อาทิตย์</p>
-        </div>
-        <div class="price">95 ฿</div>
-      </article>
+    <footer id="contact">
+      <div class="contact">
+        <strong>ที่ตั้ง</strong><br>
+        ซอยนิมมานเหมินทร์ 11, ต.สุเทพ, อ.เมืองเชียงใหม่
+n
+      </div>
+      <div class="hours">
+        <strong>เวลา</strong><br>
+        10:00 - 21:00 (หยุดทุกวันพุธ)
+      </div>
+      <div style="min-width:220px">
+        <strong>ติดต่อ</strong><br>
+        โทร: 081-234-5678<br>
+        LINE / IG / Facebook: @maechoinoodle
+      </div>
+    </footer>
 
-      <!-- Drinks: sample -->
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="28" y="8" width="28" height="48" rx="6" fill="#fff" stroke="#efe1d6"></rect>
-            <circle cx="42" cy="28" r="6" fill="#f7e7da"></circle>
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>น้ำเก๊กฮวยเย็น</h3>
-          <p>ต้มจากดอกเก๊กฮวยแท้ หอมหวาน</p>
-        </div>
-        <div class="price">20 ฿</div>
-      </article>
-
-      <article class="menu-card" role="listitem">
-        <div class="dish-thumb" aria-hidden="true">
-          <svg width="80" height="60" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="28" y="8" width="28" height="48" rx="6" fill="#fff" stroke="#efe1d6"></rect>
-            <circle cx="42" cy="28" r="6" fill="#d6f0d6"></circle>
-          </svg>
-        </div>
-        <div class="dish-info">
-          <h3>น้ำมะตูมเย็น</h3>
-          <p>กลิ่นหอมรสหวานละมุน</p>
-        </div>
-        <div class="price">20 ฿</div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- Promotion strip -->
-  <div class="promo" role="note" aria-live="polite">
-    <div>
-      <strong>โปรปี 2025:</strong>
-      <span style="color:var(--muted)">ลด 10% สำหรับนักศึกษา มช. และราชภัฏเชียงใหม่ · "อิ่มคู่ 79 บาท" ทุกวันจันทร์</span>
-    </div>
-    <div style="font-weight:700;color:var(--accent)">สะสม 10 ชาม ฟรี 1 ชาม (ผ่าน LINE)</div>
   </div>
-
-  <!-- About / Standards -->
-  <section class="section" id="about" aria-labelledby="aboutTitle" style="margin-top:6px;">
-    <h2 id="aboutTitle">มาตรฐาน & คุณภาพ</h2>
-    <p style="color:var(--muted);max-width:900px">
-      - น้ำซุปต้มใหม่ทุกวัน, วัตถุดิบสดจากตลาดเชียงใหม่, ปรุงตามออเดอร์และปรับระดับความเผ็ดได้ตามความชอบ
-      <br>- ผ่านการตรวจสุขาภิบาลอาหารจากเทศบาลนครเชียงใหม่, พนักงานได้รับการอบรมด้านบริการและความสะอาด
-      <br>- รองรับการสั่งผ่าน QR Code บนโต๊ะ และมีบริการจั ดส่งผ่าน GrabFood / LINE MAN / Robinhood
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div>
-      <strong>แม่ช้อยน้ำตก</strong>
-      <div style="font-size:.95rem;color:var(--muted)">นิมมานเหมินทร์ 11, เชียงใหม่ · โทร 081-234-5678</div>
-    </div>
-    <div style="text-align:right">
-      <small style="display:block;color:var(--muted)">© 2025 MaeChoi Boat Noodle</small>
-      <small style="display:block;color:var(--muted)">ออกแบบเว็บตัวอย่างสำหรับนำไป deploy บน Azure</small>
-    </div>
-  </footer>
-
-  <!-- small JS for smooth scroll -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-  </script>
 </body>
 </html>
