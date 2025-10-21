@@ -1,95 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ร้านขายข้าวสาร</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แม่ช้อยน้ำตก | Maechoi Boat Noodle</title>
+  <meta name="description" content="ร้านก๋วยเตี๋ยวเรือ แม่ช้อยน้ำตก — รสชาติเข้มข้นแบบไทยแท้ ตั้งอยู่ย่านนิมมาน เหมาะสำหรับนักศึกษาและนักท่องเที่ยว" />
   <style>
-    body {
-      font-family: 'Sarabun', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f5f0;
+    /* Simple, modern responsive CSS */
+    :root{
+      --accent:#b83b2e; /* warm red */
+      --accent-2:#f4b183; /* warm peach */
+      --muted:#6b6b6b;
+      --bg:#fff9f6;
+      --card:#ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    header {
-      background-color: #d3a94c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    header img {
-      width: 100px;
-      height: auto;
-    }
-    .slogan {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    .product-section {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 40px 20px;
-      flex-wrap: wrap;
-    }
-    .product {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .product h3 {
-      margin-top: 15px;
-      font-size: 1.2em;
-    }
-    .price {
-      color: #b94e28;
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-    footer {
-      background-color: #d3a94c;
-      color: white;
-      text-align: center;
-      padding: 15px;
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#111}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{display:flex;flex-direction:column;align-items:flex-start}
+    .logo h1{margin:0;font-size:22px;color:var(--accent)}
+    .tag{font-size:13px;color:var(--muted)}
+
+    nav{margin-left:auto}
+    nav a{margin-left:12px;text-decoration:none;color:var(--muted);font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:18px;align-items:center}
+    .hero-card{background:var(--card);padding:22px;border-radius:16px;box-shadow:0 6px 18px rgba(15,15,15,0.06)}
+    .hero h2{margin:0 0 8px 0;font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .menu{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 12px rgba(15,15,15,0.05)}
+    .card h3{margin:0 0 10px 0;color:var(--accent)}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    td,th{padding:8px 6px;border-bottom:1px dashed #eee}
+    .price{font-weight:700;text-align:right}
+
+    .drinks ul{list-style:none;padding:0;margin:0}
+    .drinks li{padding:6px 0}
+
+    .promos{display:flex;gap:12px;margin-top:16px}
+    .promo{flex:1;padding:14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:#fff;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .contact{flex:1}
+    .hours{min-width:220px}
+
+    .badges{display:flex;gap:10px;margin-top:8px}
+    .badge{background:#f3f3f3;padding:6px 8px;border-radius:8px;font-size:13px}
+
+    /* responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .menu{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logokao1.png" alt="โลโก้ร้านข้าว">
-    <h1>ร้านข้าวคุณภาพ "ข้าวหอมบ้านนา"</h1>
-    <div class="slogan">ข้าวหอมคุณภาพ ปลอดสาร สดจากนา ส่งตรงถึงมือคุณ</div>
-  </header>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>แม่ช้อยน้ำตก</h1>
+        <div class="tag">Maechoi Boat Noodle — รสชาติเข้มข้นแบบไทย</div>
+      </div>
+      <nav>
+        <a href="#menu">เมนู</a>
+        <a href="#promotions">โปรโมชั่น</a>
+        <a href="#contact">ติดต่อ</a>
+      </nav>
+    </header>
 
-  <section class="product-section">
-    <div class="product">
-      <img src="1.jpg" alt="ข้าวหอมมะลิ">
-      <h3>ข้าวหอมมะลิ 100%</h3>
-      <div class="price">ราคา 120 บาท / 5 กก.</div>
-    </div>
-    <div class="product">
-      <img src="2.jpg" alt="ข้าวกล้อง">
-      <h3>ข้าวกล้องอินทรีย์</h3>
-      <div class="price">ราคา 150 บาท / 5 กก.</div>
-    </div>
-    <div class="product">
-      <img src="3.jpg" alt="ข้าวเหนียว">
-      <h3>ข้าวเหนียวเขี้ยวงู</h3>
-      <div class="price">ราคา 100 บาท / 5 กก.</div>
-    </div>
-  </section>
+    <section class="hero">
+      <div class="hero-card">
+        <h2>ยินดีต้อนรับสู่ แม่ช้อยน้ำตก</h2>
+        <p>ร้านก๋วยเตี๋ยวเรือแบบดั้งเดิม ผสานความเข้มข้นของน้ำซุปสูตรพิเศษที่สืบทอดมาจากรุ่นสู่รุ่น — เหมาะสำหรับนักศึกษา, คนทำงาน และนักท่องเที่ยว</p>
 
-  <footer>
-    ติดต่อเรา: โทร 081-234-5678 | Line: @kaobaanna
-  </footer>
+        <div style="margin-top:14px" class="badges">
+          <div class="badge">น้ำซุปสูตรเด็ด 3 แบบ</div>
+          <div class="badge">สดใหม่ทุกวัน</div>
+          <div class="badge">บริการ QR/Delivery</div>
+        </div>
+
+        <div style="margin-top:16px">
+          <strong>ที่ตั้ง:</strong> ซอยนิมมานเหมินทร์ 11, อ.เมือง, เชียงใหม่<br>
+          <strong>เวลา:</strong> 10:00 - 21:00 (หยุดทุกวันพุธ)
+        </div>
+
+      </div>
+
+      <aside class="card">
+        <h3>ติดต่อ / โซเชียล</h3>
+        <p>โทร: 081-234-5678<br>
+        LINE / IG / Facebook: <strong>@maechoinoodle</strong></p>
+
+        <h3 style="margin-top:12px">บริการ</h3>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>สั่งผ่าน QR Code บนโต๊ะ</li>
+          <li>ชำระแบบ Cashless (PromptPay / TrueMoney / บัตร)</li>
+          <li>ส่งผ่าน GrabFood / LINEMAN / Robinhood</li>
+        </ul>
+
+      </aside>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="card">
+        <h3>เมนูหลัก</h3>
+        <p style="color:var(--muted)">น้ำซุป: สูตรน้ำตก (Signature) | น้ำใส (Original) | ต้มยำโบราณ</p>
+        <table>
+          <thead>
+            <tr><th>เมนู</th><th class="price">ราคา (บาท)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>จานเล็ก (เรือเล็ก)</td><td class="price">25</td></tr>
+            <tr><td>จานกลาง (มาตรฐาน)</td><td class="price">40</td></tr>
+            <tr><td>จานใหญ่ (พิเศษ)</td><td class="price">55</td></tr>
+            <tr><td>เกาเหลาพิเศษ (ไม่มีเส้น)</td><td class="price">60</td></tr>
+            <tr><td>จัมโบ้พรีเมียม (เฉพาะ ศุกร์–อาทิตย์)</td><td class="price">95</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:12px;color:var(--muted)"><strong>เส้น:</strong> เส้นเล็ก / เส้นใหญ่ / หมี่เหลือง / วุ้นเส้น / บะหมี่แห้ง</p>
+        <p style="color:var(--muted)"><strong>เนื้อสัตว์:</strong> หมู / หมูตุ๋น / เนื้อวัว / เนื้อตุ๋น / ลูกชิ้นหมู / ลูกชิ้นเอ็น</p>
+      </div>
+
+      <div class="card drinks">
+        <h3>เครื่องดื่ม</h3>
+        <ul>
+          <li>น้ำเก๊กฮวยเย็น — 20 บาท</li>
+          <li>น้ำมะตูมเย็น — 20 บาท</li>
+          <li>น้ำอัญชันมะนาว — 25 บาท</li>
+          <li>น้ำตะไคร้หอม — 20 บาท</li>
+          <li>น้ำเปล่า / โค้ก — 15 บาท</li>
+        </ul>
+
+        <h3 style="margin-top:12px">มาตรฐานคุณภาพ</h3>
+        <p style="color:var(--muted);margin:0">น้ำซุปต้มใหม่ทุกวัน, วัตถุดิบสดจากตลาดเชียงใหม่, ผ่านการตรวจสุขาภิบาลอาหารจากเทศบาลฯ</p>
+
+      </div>
+    </section>
+
+    <section id="promotions">
+      <h3 style="margin-top:18px">โปรโมชั่นปี 2025</h3>
+      <div class="promos">
+        <div class="promo">ลด 10% สำหรับนักศึกษา มช. และราชภัฏเชียงใหม่</div>
+        <div class="promo">อิ่มคู่ 79 บาท — ทุกวันจันทร์ (ก๋วยเตี๋ยว 2 ชาม + เครื่องดื่ม 2 แก้ว)</div>
+      </div>
+      <p style="color:var(--muted);margin-top:10px">ซื้อครบ 100 บาท รับเครื่องดื่มฟรี 1 แก้ว • สะสมครบ 10 ชาม ฟรี 1 ชาม ผ่าน LINE Official: @maechoinoodle</p>
+    </section>
+
+    <footer id="contact">
+      <div class="contact">
+        <strong>ที่ตั้ง</strong><br>
+        ซอยนิมมานเหมินทร์ 11, ต.สุเทพ, อ.เมืองเชียงใหม่
+n
+      </div>
+      <div class="hours">
+        <strong>เวลา</strong><br>
+        10:00 - 21:00 (หยุดทุกวันพุธ)
+      </div>
+      <div style="min-width:220px">
+        <strong>ติดต่อ</strong><br>
+        โทร: 081-234-5678<br>
+        LINE / IG / Facebook: @maechoinoodle
+      </div>
+    </footer>
+
+  </div>
 </body>
 </html>
